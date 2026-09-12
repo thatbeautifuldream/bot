@@ -1,6 +1,8 @@
 import Link from "next/link"
 
+import { signOut } from "@/app/login/actions"
 import { NewChatButton } from "@/components/new-chat-button"
+import { Button } from "@/components/ui/button"
 
 export function SiteHeader() {
   return (
@@ -8,7 +10,14 @@ export function SiteHeader() {
       <Link href="/" className="text-sm font-medium">
         Chat
       </Link>
-      <NewChatButton />
+      <div className="flex items-center gap-2">
+        <NewChatButton />
+        <form action={signOut}>
+          <Button type="submit" variant="ghost" size="sm">
+            Sign out
+          </Button>
+        </form>
+      </div>
     </header>
   )
 }
