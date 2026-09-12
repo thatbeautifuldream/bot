@@ -1,6 +1,6 @@
+import { openai } from "@ai-sdk/openai";
 import { defineAgent } from "eve";
 
-import { chatgpt } from "eve/models/openai";
 export default defineAgent({
-  model: chatgpt("gpt-5.6-sol"),
+  model: openai("gpt-5.5"),
 });
